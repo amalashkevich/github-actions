@@ -17,4 +17,4 @@ sudo yarn
 
 echo "Run new PM2 action"
 # sudo cp /home/ubuntu/ecosystem.json ecosystem.json
-sudo pm2 start pm2.json
+sudo pm2 start --name=stonks-dev index.js
