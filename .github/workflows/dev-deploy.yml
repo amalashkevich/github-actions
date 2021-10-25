@@ -18,7 +18,7 @@ jobs:
         envkey_SOME_API_KEY: "123456abcdef"
         envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
         some_other_variable: foobar
-        template_file: .env.template1
+        template_file: .env.template
         output_file_name: .env
     - name: Echo make
       run: echo "${{ steps.make.outputs.content }}"
