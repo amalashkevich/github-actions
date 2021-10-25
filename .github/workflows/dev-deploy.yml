@@ -11,6 +11,7 @@ jobs:
  
     steps:
     - name: Make envfile
+      id: make
       uses: amalashkevich/create-envfile@v1
       with:
         envkey_DB_HOST: 'NEW_HOST'
@@ -19,6 +20,8 @@ jobs:
         some_other_variable: foobar
         template_file: .env.template1
         output_file_name: .env
+    - name: Echo make
+      run: echo "${{ steps.make.outputs.content }}"
     - name: Read package.json
       id: env
       uses: juliangruber/read-file-action@v1
