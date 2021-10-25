@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Make envfile
       id: make
-      uses: amalashkevich/create-envfile@v1
+      uses: amalashkevich/create-envfile@master
       with:
         envkey_DB_HOST: 'NEW_HOST'
         envkey_SOME_API_KEY: "123456abcdef"
