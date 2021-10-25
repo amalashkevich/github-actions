@@ -17,7 +17,7 @@ jobs:
         envkey_SOME_API_KEY: "123456abcdef"
         envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
         some_other_variable: foobar
-        template_file: .env.template
+        template_file: .env.template1
         output_file_name: .env
     - name: Read package.json
       id: env
