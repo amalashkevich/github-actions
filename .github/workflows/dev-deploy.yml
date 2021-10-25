@@ -13,16 +13,16 @@ jobs:
     - name: Make envfile
       uses: amalashkevich/create-envfile@v1
       with:
-        envkey_DEBUG: false
+        envkey_DB_HOST: 'NEW_HOST'
         envkey_SOME_API_KEY: "123456abcdef"
         envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
         some_other_variable: foobar
-        directory: <directory_name>
-        file_name: .env
+        template_file: .env.template
+        output_file_name: .env
     - name: Read package.json
       id: env
       uses: juliangruber/read-file-action@v1
       with:
         path: .env
-    - name: Echo package.json
+    - name: Echo .env
       run: echo "${{ steps.env.outputs.content }}"
