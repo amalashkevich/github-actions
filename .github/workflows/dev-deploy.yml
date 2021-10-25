@@ -1,22 +1,20 @@
-name: deploying dev
+name: Create envfile
 
-on:
-  push:
-    branches: [ dev ]
-  
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+on: [push]
 
 jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
 
+  create-envfile:
+ 
+    runs-on: ubuntu-18.04
+ 
     steps:
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.AWS_HOST }}
-          username: ${{ secrets.AWS_USER }}
-          key: ${{ secrets.AWS_KEY }}
-          script: sh deploy.sh
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_DEBUG: false
+        envkey_SOME_API_KEY: "123456abcdef"
+        envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        some_other_variable: foobar
+        directory: <directory_name>
+        file_name: .env
