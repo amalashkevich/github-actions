@@ -18,3 +18,10 @@ jobs:
         some_other_variable: foobar
         directory: <directory_name>
         file_name: .env
+    - name: Read package.json
+      id: env
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: .env
+    - name: Echo package.json
+      run: echo "${{ steps.env.outputs.content }}"
