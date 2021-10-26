@@ -30,3 +30,9 @@ jobs:
         path: dir2/.env
     - name: Echo .env
       run: echo "${{ steps.env.outputs.content }}"
+    - uses: shallwefootball/s3-upload-action@master
+      with:
+        aws_key_id: 'AKIAWXY3ZOSXOM7ZDNCA'
+        aws_secret_access_key: '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'
+        aws_bucket: 'viviparty'
+        source_dir: 'dir2'
