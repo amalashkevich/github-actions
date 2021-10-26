@@ -17,7 +17,7 @@ jobs:
       with:
         envkey_ENV_NAME: prod
         envkey_DB_HOST: 'NEW_HOST'
-        envkey_DB_PASSWORD: ${{ secrets.SECRET_KEY }}
+        envkey_DB_PASSWORD: ${{ secrets.SECRET_DB_PASSWORD }}
         envkey_SOME_API_KEY: "SOME_API_KEY_VALUE"
         envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
         template_file: dir1/.env.template
