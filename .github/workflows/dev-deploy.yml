@@ -20,7 +20,7 @@ jobs:
         envkey_SOME_API_KEY: "123456abcdef"
         envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
         template_file: dir1/.env.template
-        output_file_name: dir2/.env
+        output_file: dir2/.env
     - name: Echo make
       run: echo "${{ steps.make.outputs.content }}"
     - name: Read package.json
