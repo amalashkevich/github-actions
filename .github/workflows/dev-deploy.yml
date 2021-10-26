@@ -18,15 +18,14 @@ jobs:
         envkey_DB_HOST: 'NEW_HOST'
         envkey_SOME_API_KEY: "123456abcdef"
         envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        some_other_variable: foobar
-        template_file: .env.template
-        output_file_name: .env
+        template_file: dir1/.env.template
+        output_file_name: dir2/.env
     - name: Echo make
       run: echo "${{ steps.make.outputs.content }}"
     - name: Read package.json
       id: env
       uses: juliangruber/read-file-action@v1
       with:
-        path: .env
+        path: dir2/.env
     - name: Echo .env
       run: echo "${{ steps.env.outputs.content }}"
