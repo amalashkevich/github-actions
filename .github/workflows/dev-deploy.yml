@@ -16,6 +16,7 @@ jobs:
       uses: amalashkevich/create-envfile@master
       with:
         envkey_DB_HOST: 'NEW_HOST'
+        envkey_DB_PASSWORD: ${{ secrets.SECRET_KEY }}
         envkey_SOME_API_KEY: "123456abcdef"
         envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
         template_file: dir1/.env.template
