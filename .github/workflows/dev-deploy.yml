@@ -15,6 +15,7 @@ jobs:
       id: make
       uses: amalashkevich/create-envfile@master
       with:
+        envkey_ENV_NAME: prod
         envkey_DB_HOST: 'NEW_HOST'
         envkey_DB_PASSWORD: ${{ secrets.SECRET_KEY }}
         envkey_SOME_API_KEY: "SOME_API_KEY_VALUE"
