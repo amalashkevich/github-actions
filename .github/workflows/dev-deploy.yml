@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Make envfile
       id: make
-      uses: amalashkevich/create-envfile@master
+      uses: amalashkevich/create-envfile-from-template@master
       with:
         envkey_ENV_NAME: prod
         envkey_DB_HOST: 'db.prod'
